@@ -5,6 +5,7 @@ import {HomeComponent} from './components/home/home.component'
 import {ItemDescComponent}from './components/item-desc/item-desc.component'
 import {LoginComponent} from './components/login/login.component'
 import {SingupComponent} from './components/singup/singup.component'
+import {FinderComponent} from './components/finder/finder.component'
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'item-desc', component: ItemDescComponent},
   {path:'login', component: LoginComponent},
   {path:'singup', component: SingupComponent},
+  {path:'finder', component: FinderComponent},
   {path: '', pathMatch: 'full', redirectTo:'home'},
     {path: '**', pathMatch: 'full', redirectTo:'home'},
 ];
