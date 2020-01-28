@@ -9,6 +9,11 @@ import { CartComponent } from './components/cart/cart.component';
 import { ItemDescComponent } from './components/item-desc/item-desc.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
+import { CrudComponent } from './components/crud/crud.component';
+import { FinderComponent } from './components/finder/finder.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { HomeComponent } from './components/home/home.component';
     CartComponent,
     ItemDescComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    CrudComponent,
+    FinderComponent,
+    HeaderComponent,
+    FooterComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
