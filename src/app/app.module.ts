@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { SingupComponent } from './components/singup/singup.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ItemDescComponent } from './components/item-desc/item-desc.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -14,7 +14,7 @@ import { HomeComponent } from './components/home/home.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    SingupComponent,
+    SignupComponent,
     CartComponent,
     ItemDescComponent,
     NavbarComponent,
