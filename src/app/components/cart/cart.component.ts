@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
+  items:any[] = [];
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  agregarAlCarrito(item:any){
+    this.items.push(item);
+  }
 }
