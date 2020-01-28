@@ -8,6 +8,8 @@ import {SingupComponent} from './components/singup/singup.component'
 import { CrudComponent } from './components/crud/crud.component';
 
 
+
+
 const routes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'cart', component: CartComponent},
