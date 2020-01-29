@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Shop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
@@ -47,3 +48,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - uv: '1.33.1',
 - v8: '7.7.299.13-node.16',
 - zlib: '1.2.11'
+=======
+version Node Sinahi: v12.13.0
+version Angular Sinahi:  8.2.14
+version Angular Sinahi CLI: 8.3.23
+>>>>>>> crud
