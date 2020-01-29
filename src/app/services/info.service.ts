@@ -1,13 +1,16 @@
   import { Injectable } from '@angular/core';
+  import { ItemModel } from '../models/item.model'
+  import { CarritoModel } from '../models/carrito.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class InfoService {
+  
+  carrito:CarritoModel
 
-  constructor() { }
-
-  products = [
+  products:ItemModel[] = [
     {
       name: 'Chocolate Hersheys con almendras',
       price: 15,
@@ -91,5 +94,7 @@ export class InfoService {
     },
     
   ]
+
+  constructor() { }
 
 }

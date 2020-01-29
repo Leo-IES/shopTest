@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input} from "@angular/core";
 import { Router } from "@angular/router";
-import { InfoService } from "../../services/info.service";
+import { ItemModel } from 'src/app/models/item.model';
 
 @Component({
   selector: "app-item",
@@ -8,20 +8,20 @@ import { InfoService } from "../../services/info.service";
   styleUrls: ["./item.component.css"]
 })
 export class ItemComponent implements OnInit {
-  productos: any[ ] = [];
   imagen: string;
+  @Input() producto:ItemModel
 
-  constructor(private router: Router, private products: InfoService) {
-    this.productos= this.products.products;
-    this.imagen = this.products.products[0].images[0].url
-    console.log(this.productos)
-    
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
     
   }
 
+  mostrarPuntos():string{
+    if(this.producto.name.length > 15)
+    return '...'
+  }
   // irPaginaDelItem() {}
 
   // agregarAlCarrito() {}
