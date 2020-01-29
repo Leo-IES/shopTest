@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+    /* You can add global styles to this file, and also import other style files */
+    
+    #footer {
+        position: fixed;
+        bottom: 0%;
+        width: 100%;
+        z-index: 1100;
+    }
+    
+    .carousel,
+    .carousel-inner>.item>img {
+        height: 300px;
+        width: 500px;
+    }
