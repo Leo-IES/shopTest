@@ -12,11 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CrudComponent } from './components/crud/crud.component';
 import { FinderComponent } from './components/finder/finder.component';
 import { HeaderComponent } from './components/shared/header/header.component';
-<<<<<<< HEAD
-import { FooterComponent } from './components/shared/footer/footer.component';
-=======
 import {FooterComponent } from './components/shared/footer/footer.component';
->>>>>>> crud
 import { ItemComponent } from './components/item/item.component';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {MenuItem} from 'primeng/api';   
