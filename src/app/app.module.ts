@@ -17,6 +17,8 @@ import { ItemComponent } from './components/item/item.component';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {MenuItem} from 'primeng/api';   
 import {InputTextModule} from 'primeng/inputtext';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import {InputTextModule} from 'primeng/inputtext';
     BrowserModule,
     AccordionModule,
     InputTextModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
