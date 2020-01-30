@@ -24,6 +24,7 @@ const routes: Routes = [
   {path:'signup', component: SignupComponent},
   {path:'finder', component: FinderComponent},
   {path:'crud', component: CrudComponent},
+  {path:'signup', component: SignupComponent},
   {path: '', pathMatch: 'full', redirectTo:'home'},
     {path: '**', pathMatch: 'full', redirectTo:'home'},
 ];

@@ -2,7 +2,7 @@
     
     #footer {
         position: static;
-        bottom: 0%;
+        bottom: 100%;
         width: 100%;
         z-index: 1100;
     }

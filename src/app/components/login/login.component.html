@@ -1,20 +1,23 @@
-<div class="card">
-    <h5 class="card-header text-center">Iniciar Sesion</h5>
-    <div class="card-body">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Correo</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+<div>
+    <form action="/action_page.php" class="was-validated w-50 m-auto">
+        <div class="form-group  ">
+            <label for="uname">Usuario:</label>
+            <input type="text" class="form-control" placeholder="Ingresa tu usuario" name="nombre" minlength="7" required>
+            <div class="valid-feedback">Validado.</div>
+            <div class="invalid-feedback">Minimo 7 caracteres.</div>
         </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+        <div class="form-group">
+            <label for="pwd">Contraseña:</label>
+            <input type="password" class="form-control" placeholder="Ingresa tu contraseña" name="contrasena" minlength="8" required>
+            <div class="valid-feedback">Validado.</div>
+            <div class="invalid-feedback">Minimo 8 caracteres.</div>
         </div>
-    </div>
-    <div class="card-footer text-muted text-center">
-        <a href="#" class="btn btn-primary">Entrar!</a>
-    </div>
+
+        <div class="text-center">
+            <button class="btn btn-success m-1">Ingresar</button>
+            <button class="btn btn-primary" routerLink="/signup">Crear cuenta</button>
+        </div>
+    </form>
+
 </div>
