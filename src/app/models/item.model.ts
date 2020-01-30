@@ -7,4 +7,5 @@ export class ItemModel{
     brand:string;
     type:string;
     images:any[];
+    
 }
