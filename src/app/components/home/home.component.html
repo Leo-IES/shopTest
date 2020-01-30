@@ -2,6 +2,7 @@
     <app-item *ngFor="let item of products_to_show | paginate: { itemsPerPage: 12, currentPage: p} " [producto]="item"></app-item>
 </div>
 <div class="text-center m-5">
+
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 <!-- <nav>
