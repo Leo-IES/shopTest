@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-    <app-item *ngFor="let item of products_to_show | paginate: { itemsPerPage: 12, currentPage: p} " [producto]="item"></app-item>
+    <app-item *ngFor="let item of products_to_show | paginate: { itemsPerPage: 12, currentPage: p}; let i=index " [producto]="item" [id]="i"></app-item>
 
 </div>
 <div class="text-center m-5">
