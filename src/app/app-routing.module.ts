@@ -19,7 +19,7 @@ import { CrudComponent } from './components/crud/crud.component';
 const routes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'cart', component: CartComponent},
-  {path:'item-desc', component: ItemDescComponent},
+  {path:'item-desc/:id', component: ItemDescComponent},
   {path:'login', component: LoginComponent},
   {path:'signup', component: SignupComponent},
   {path:'finder', component: FinderComponent},

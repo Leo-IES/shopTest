@@ -1,4 +1,6 @@
-import { ItemModel } from '../models/item.model'
+import { PedidoModel } from './pedido.model'
+
 export class CarritoModel{
-    items:ItemModel[]
+    pedidos:PedidoModel[];
+    total:number = 0;
 }

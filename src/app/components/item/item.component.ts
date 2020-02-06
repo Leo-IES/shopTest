@@ -8,8 +8,8 @@ import { ItemModel } from 'src/app/models/item.model';
   styleUrls: ["./item.component.css"]
 })
 export class ItemComponent implements OnInit {
-  imagen: string;
   @Input() producto:ItemModel
+  @Input() id:number
 
   constructor(private router: Router) {
   }
@@ -18,11 +18,9 @@ export class ItemComponent implements OnInit {
     
   }
 
-  mostrarPuntos():string{
-    if(this.producto.name.length > 15)
-    return '...'
+  irPaginaDelItem() {
+    this.router.navigate(['/item-desc', this.id % 6])
   }
-  // irPaginaDelItem() {}
 
   // agregarAlCarrito() {}
 }

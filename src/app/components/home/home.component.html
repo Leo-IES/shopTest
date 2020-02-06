@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-    <app-item *ngFor="let item of products_to_show" [producto]="item"></app-item>
+    <app-item *ngFor="let item of products_to_show; let i = index" [producto]="item" [id]="i"></app-item>
 </div>
 
 <br>
