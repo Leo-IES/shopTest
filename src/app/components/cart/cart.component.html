@@ -1,7 +1,28 @@
-<ul class="list-group">
-    <li class="list-group-item"></li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-</ul>
+<div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let pedido of carrito.pedidos">
+                <div class="row">
+                    <img class="imagen col-2" [src]="pedido.item.images[0].url" alt="pedido.item.name">
+                    <div class="col ml-3">
+                        <h3>{{pedido.item.name}}</h3>
+                        <h5>Precio: {{pedido.item.price | currency}} c/u</h5>
+                        <h5>Cantidad: {{pedido.cantidad}}</h5>
+                    </div>
+                    <i class="fa fa-minus-circle fa-3x mt-4 mr-5 puntero" (click)="removerPedido(pedido)"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-4">
+        <h4 class="text-left">Total:</h4>
+        <h1 class="text-left">{{carrito.total | currency}}</h1>
+    </div>
+</div>
+<!-- <div class="card text-center">
+    <div class="card-body">
+        <i class="far fa-10x fa-frown"></i>
+        <h5 class="card-title mt-5">No tienes articulos en el carrito</h5>
+        <a routerLink="/home" class="col-3 btn btn-primary">Ir al inicio</a>
+    </div>
+</div> -->

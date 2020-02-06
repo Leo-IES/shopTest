@@ -20,7 +20,6 @@ import {InputTextModule} from 'primeng/inputtext';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

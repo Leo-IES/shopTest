@@ -1,6 +1,7 @@
   import { Injectable } from '@angular/core';
   import { ItemModel } from '../models/item.model'
   import { CarritoModel } from '../models/carrito.model';
+import { PedidoModel } from '../models/pedido.model';
 
 
 @Injectable({
@@ -8,8 +9,8 @@
 })
 export class InfoService {
   
-  carrito:CarritoModel
-
+  carrito:CarritoModel = new CarritoModel();
+  
   products:ItemModel[] = [
     {
       name: 'Chocolate Hersheys con almendras',
@@ -22,7 +23,7 @@ export class InfoService {
           url: 'https://www.chocolatehersheys.com/content/dam/chocolatemexico/es_mx/images/hersheys-50/decada-1970.png'
         },
         {
-          url: 'https://i.ya-webdesign.com/images/hershey-bar-png-1.png'
+          url: 'https://www.chocolatehersheys.com/content/dam/chocolatemexico/es_mx/images/hersheys-50/decada-1970.png'
         }
       ]
     },
@@ -663,6 +664,8 @@ export class InfoService {
     
   ]
 
-  constructor() { }
+  constructor() {
+    this.carrito.pedidos = []
+  }
 
 }
