@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
   usuarioModel: UserModel= new UserModel;
   public form:FormGroup;
 
+  datosUsuario: any={};
+
   constructor(private router: Router,
     private usuService: UsersService, private fb:FormBuilder) {
       this.form = this.fb.group({
@@ -39,26 +41,21 @@ export class LoginComponent implements OnInit {
 
     this.usuService.loginUsuarios( this.usuarioModel )
       .subscribe( resp => {
+    
+        console.log("DATOS USUARIOS:", resp)
+       
+
         Swal.fire({
           allowOutsideClick:false,
           text:"Comprobando..",
           timer: 1000
         });
         Swal.showLoading();
-        // console.log(resp);
-        
-
-        // if ( this.recordarme ) {
-        //   localStorage.setItem('email', this.usuario.email);
-        // }
-
       
-        // this.email = this.usuario.email;
-        // this.sesion.correoEnviado = this.email;
-        // this.sesion.estaLog = true;
-        // setTimeout(function(){
-         
-        //  },1000);
+       this.datosUsuario=resp;
+       this.usuService.usuarioLogeado=this.datosUsuario.user.id;
+       console.log("ID del usuario:", this.usuService.usuarioLogeado)
+
          this.router.navigateByUrl('/home'); 
 
          Swal.fire({
