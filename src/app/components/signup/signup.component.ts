@@ -8,6 +8,8 @@ import { UserModel } from '../../models/user.model';
 import {NgForm} from '@angular/forms';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
+import Swal from 'sweetalert2';
+
 
 
 
@@ -44,19 +46,31 @@ export class SignupComponent implements OnInit {
   ngOnInit()
 {
   this.usuarioModel=new UserModel;
-
-
 }
 
 
   regUsuarios(form: NgForm)
   {
+    if (form.invalid){return;}
+
     this.usuService.crearUsuarios(this.usuarioModel)
     .subscribe(resp=>{
       
     console.log("Usuario registrado:", resp);
-  }
-  );
+    Swal.fire({
+      allowOutsideClick:false,
+      text:"Usuario registrado",
+      timer: 1000
+    });
+
+  },
+  (err) => {
+    Swal.fire({
+      allowOutsideClick:false,
+      title:"Error al registrar",
+      text:err.error.message
+    });
+   } );
 }
 
 

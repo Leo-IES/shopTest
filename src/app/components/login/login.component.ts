@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+import {NgForm} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { UsersService } from 'src/app/services/users.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserModel } from 'src/app/models/user.model';
+
+import Swal from 'sweetalert2';
+import { timer } from 'rxjs';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,9 +16,64 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  usuarioModel: UserModel= new UserModel;
+  public form:FormGroup;
+
+  constructor(private router: Router,
+    private usuService: UsersService, private fb:FormBuilder) {
+      this.form = this.fb.group({
+        username:["", Validators.compose([Validators.required,Validators.minLength(3)])],
+        password:["", Validators.compose([Validators.required,Validators.minLength(8)])]
+      })
+     }
 
   ngOnInit() {
+    this.usuarioModel=new UserModel;
   }
 
+  loginUsuarios(form: NgForm)
+  {
+    if (form.invalid){ 
+      return;
+    }
+
+    this.usuService.loginUsuarios( this.usuarioModel )
+      .subscribe( resp => {
+        Swal.fire({
+          allowOutsideClick:false,
+          text:"Comprobando..",
+          timer: 1000
+        });
+        Swal.showLoading();
+        // console.log(resp);
+        
+
+        // if ( this.recordarme ) {
+        //   localStorage.setItem('email', this.usuario.email);
+        // }
+
+      
+        // this.email = this.usuario.email;
+        // this.sesion.correoEnviado = this.email;
+        // this.sesion.estaLog = true;
+        // setTimeout(function(){
+         
+        //  },1000);
+         this.router.navigateByUrl('/home'); 
+
+         Swal.fire({
+          allowOutsideClick:false,
+          text:"Bienvenido!",
+          timer: 1000
+        });
+        
+}, (err) => {
+  Swal.fire({
+    allowOutsideClick:false,
+    text:"Datos incorrectos",
+  });
 }
+
+);
+
+}}

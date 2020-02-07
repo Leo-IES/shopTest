@@ -12,11 +12,14 @@ import {UserModel} from '../models/user.model'
 export class UsersService {
 
   constructor(private http: HttpClient) {
+    this.leerToken();
     console.log("SERVICIO LISTO");
 
    }
 
    private url2:string =  'http://18.189.157.105:3000/';
+   private token:string =  '';
+   userToken: string;
 
    getQuery( query: string ) {
 
@@ -38,6 +41,44 @@ export class UsersService {
   {
   // let json = JSON.stringify(usuarios)
    return this.http.post(`${this.url2}users`, usuarios);
+  }
+
+  loginUsuarios( usuario: UserModel ) {
+
+    const authData = {
+      ...usuario,
+      returnSecureToken: true
+    };
+
+    return this.http.post(
+      `${ this.url2 }auth${this.token}`,
+      authData
+    ).pipe(
+      map( resp => {
+        this.guardarToken( resp['token'] );
+        return resp;
+      })
+    );
+  }
+
+  private guardarToken( token: string ) {
+    this.userToken = token;
+    localStorage.setItem('token', token);
+
+    // let hoy = new Date();
+    // hoy.setSeconds( 3600 );
+
+    // localStorage.setItem('expira', hoy.getTime().toString() );
+  }
+
+  leerToken() {
+
+    if ( localStorage.getItem('token') ) {
+      this.userToken = localStorage.getItem('token');
+    } else {
+      this.userToken = '';
+    }
+    return this.userToken;
   }
 
 }
