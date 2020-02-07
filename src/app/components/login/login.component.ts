@@ -70,7 +70,8 @@ export class LoginComponent implements OnInit {
 }, (err) => {
   Swal.fire({
     allowOutsideClick:false,
-    text:"Datos incorrectos",
+    title:"Datos incorrectos",
+    text: "Verifique sus Datos"
   });
 }
 
