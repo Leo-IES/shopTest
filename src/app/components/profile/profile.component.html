@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4"> <img src="../../../assets/img/user-icon.png" alt="..." width="300px" height="300px"></div>
+        <div class="col text-left">
+            <h1>Username</h1>
+            <!-- <h1><input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"></h1> -->
+            <h4 class="mt-3">Email:</h4>
+            <h4>luisgabriel@4040apps.com.mx</h4>
+            <h4 class="mt-5">Teléfono:</h4>
+            <h4>55 7006 4915</h4>
+        </div>
+        <div class="col">
+            <button *ngIf="!modificando" (click)="modificando = !modificando" class="ml-5 btn btn-primary">Modificar datos</button>
+            <button *ngIf="modificando" (click)="modificando = !modificando; asignarValores()" class="ml-5 btn btn-danger">Guardar datos</button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <h3 class="row">Nombre</h3>
+            <h4 *ngIf="!modificando" class="row">{{user.name}}</h4>
+            <input #valor (keyup)="nombre = valor.value" *ngIf="modificando" type="text" class="form-control col-8" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+        </div>
+        <div class="col">
+            <h3 class="row">Apellidos</h3>
+            <h4 *ngIf="!modificando" class="row">{{user.lastName}}</h4>
+            <input #valor (keyup)="apellidos = valor.value" *ngIf="modificando" type="text" class="form-control col-8" placeholder="Apellidos" aria-label="Apellidos" aria-describedby="basic-addon1">
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <h3 class="row">Fecha de nacimiento</h3>
+            <h4 *ngIf="!modificando" class="row">{{nacimiento}}</h4>
+            <input #valor (keyup)="nacimiento = valor.value" *ngIf="modificando" type="text" class="form-control col-8" placeholder="dd/mm/aa" aria-label="dd/mm/aa" aria-describedby="basic-addon1">
+        </div>
+        <div class="col">
+            <h3 class="row">Género</h3>
+            <h4 *ngIf="!modificando" class="row">{{user.gender}}</h4>
+            <div *ngIf="modificando" class="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{genero}}
+  </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a (click)="genero = 'Masculino'" class="dropdown-item puntero">Masculino</a>
+                    <a (click)="genero = 'Femenino'" class="dropdown-item puntero">Femenino</a>
+                    <a (click)="genero = 'Otro'" class="dropdown-item puntero">Otro</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>

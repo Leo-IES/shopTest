@@ -21,9 +21,8 @@ import {MenuItem} from 'primeng/api';
 import {InputTextModule} from 'primeng/inputtext';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ProfileComponent } from './components/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
 
 
 @NgModule({
@@ -39,7 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FinderComponent,
     HeaderComponent,
     FooterComponent,
-    ItemComponent
+    ItemComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
