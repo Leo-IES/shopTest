@@ -21,6 +21,8 @@ export class UsersService {
    private token:string =  '';
    userToken: string;
 
+   usuarioLogeado:string = "";
+   
    getQuery( query: string ) {
 
     const url = `http://18.189.157.105:3000/${ query }`;
@@ -36,6 +38,7 @@ export class UsersService {
   getUsuarios() {
     return this.getQuery('users');        
   }
+
 
   crearUsuarios(usuarios:UserModel)
   {
