@@ -11,6 +11,7 @@ import {SignupComponent} from './components/signup/signup.component'
 import {FinderComponent} from './components/finder/finder.component'
 
 import { CrudComponent } from './components/crud/crud.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'finder', component: FinderComponent},
   {path:'crud', component: CrudComponent},
   {path:'signup', component: SignupComponent},
+  {path:'profile', component: ProfileComponent},
   {path: '', pathMatch: 'full', redirectTo:'home'},
     {path: '**', pathMatch: 'full', redirectTo:'home'},
 ];
